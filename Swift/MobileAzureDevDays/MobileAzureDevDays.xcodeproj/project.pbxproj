@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A092CC0521BE31013B704765 /* Pods_MobileAzureDevDays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F58262F4D4BB237F8B617DF /* Pods_MobileAzureDevDays.framework */; };
 		B576FD021F75987E007E2415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B576FD011F75987E007E2415 /* AppDelegate.swift */; };
 		B576FD041F75987E007E2415 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B576FD031F75987E007E2415 /* ViewController.swift */; };
 		B576FD071F75987E007E2415 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B576FD051F75987E007E2415 /* Main.storyboard */; };
@@ -20,7 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5F58262F4D4BB237F8B617DF /* Pods_MobileAzureDevDays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileAzureDevDays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B576FCFE1F75987E007E2415 /* MobileAzureDevDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileAzureDevDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B576FD011F75987E007E2415 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B576FD031F75987E007E2415 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,7 +39,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A092CC0521BE31013B704765 /* Pods_MobileAzureDevDays.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +48,6 @@
 		20052AD1D4F17608B1DEDD18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5F58262F4D4BB237F8B617DF /* Pods_MobileAzureDevDays.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
