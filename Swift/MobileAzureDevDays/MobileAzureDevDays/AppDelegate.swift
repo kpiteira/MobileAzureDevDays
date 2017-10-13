@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import MobileCenter
+import MobileCenterAnalytics
+import MobileCenterCrashes
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		//SentimentClient.shared.apiKey = ""
+        MSMobileCenter.start("0bb0de82-1811-4710-b434-ce78fb0a0d90", withServices:[
+            MSAnalytics.self,
+            MSCrashes.self
+        ])
 		return true
 	}
 

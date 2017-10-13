@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A092CC0521BE31013B704765 /* Pods_MobileAzureDevDays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F58262F4D4BB237F8B617DF /* Pods_MobileAzureDevDays.framework */; };
 		B576FD021F75987E007E2415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B576FD011F75987E007E2415 /* AppDelegate.swift */; };
 		B576FD041F75987E007E2415 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B576FD031F75987E007E2415 /* ViewController.swift */; };
 		B576FD071F75987E007E2415 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B576FD051F75987E007E2415 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F58262F4D4BB237F8B617DF /* Pods_MobileAzureDevDays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileAzureDevDays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B576FCFE1F75987E007E2415 /* MobileAzureDevDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileAzureDevDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B576FD011F75987E007E2415 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B576FD031F75987E007E2415 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,7 +31,9 @@
 		B576FD131F75A8CE007E2415 /* Sentiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentiment.swift; sourceTree = "<group>"; };
 		B576FD151F75ABDB007E2415 /* SentimentClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentClient.swift; sourceTree = "<group>"; };
 		B576FD171F76B01F007E2415 /* SentimentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentResponse.swift; sourceTree = "<group>"; };
+		CBE6AD227391A0030656EAAD /* Pods-MobileAzureDevDays.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileAzureDevDays.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileAzureDevDays/Pods-MobileAzureDevDays.release.xcconfig"; sourceTree = "<group>"; };
 		CBEFCE411F8C3F73009A16BF /* SentimentKeyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentKeyResponse.swift; sourceTree = "<group>"; };
+		D4ED67BBA83FCA0A2DDBE6E0 /* Pods-MobileAzureDevDays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileAzureDevDays.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileAzureDevDays/Pods-MobileAzureDevDays.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +41,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A092CC0521BE31013B704765 /* Pods_MobileAzureDevDays.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20052AD1D4F17608B1DEDD18 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F58262F4D4BB237F8B617DF /* Pods_MobileAzureDevDays.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B576FCF51F75987E007E2415 = {
 			isa = PBXGroup;
 			children = (
 				B576FD001F75987E007E2415 /* MobileAzureDevDays */,
 				B576FCFF1F75987E007E2415 /* Products */,
+				E83C5D08C11C2CE6F1967A09 /* Pods */,
+				20052AD1D4F17608B1DEDD18 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +91,15 @@
 			path = MobileAzureDevDays;
 			sourceTree = "<group>";
 		};
+		E83C5D08C11C2CE6F1967A09 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4ED67BBA83FCA0A2DDBE6E0 /* Pods-MobileAzureDevDays.debug.xcconfig */,
+				CBE6AD227391A0030656EAAD /* Pods-MobileAzureDevDays.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B576FD101F75987E007E2415 /* Build configuration list for PBXNativeTarget "MobileAzureDevDays" */;
 			buildPhases = (
+				03692EE2D4633F6A18D6AC93 /* [CP] Check Pods Manifest.lock */,
 				B576FCFA1F75987E007E2415 /* Sources */,
 				B576FCFB1F75987E007E2415 /* Frameworks */,
 				B576FCFC1F75987E007E2415 /* Resources */,
+				D84EB225B20192B8FE381303 /* [CP] Embed Pods Frameworks */,
+				C0D9C1B77D6F7D0322A69DAD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -142,6 +169,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03692EE2D4633F6A18D6AC93 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MobileAzureDevDays-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0D9C1B77D6F7D0322A69DAD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MobileAzureDevDays/Pods-MobileAzureDevDays-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D84EB225B20192B8FE381303 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MobileAzureDevDays/Pods-MobileAzureDevDays-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B576FCFA1F75987E007E2415 /* Sources */ = {
@@ -288,6 +366,7 @@
 		};
 		B576FD111F75987E007E2415 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4ED67BBA83FCA0A2DDBE6E0 /* Pods-MobileAzureDevDays.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -306,6 +385,7 @@
 		};
 		B576FD121F75987E007E2415 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBE6AD227391A0030656EAAD /* Pods-MobileAzureDevDays.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
