@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MobileCenterAnalytics
 
 class ViewController: UIViewController, UITextViewDelegate {
 
@@ -37,9 +38,11 @@ class ViewController: UIViewController, UITextViewDelegate {
 		if submitButton.currentTitle == submit {
 		
 			if !sentimentTextView.hasText {
+                MSAnalytics.trackEvent("Error: Submit without text")
 				showErrorAlert("Hold up", message: "Gotta add some text first.", dismiss: "Got it"); return
 			}
 			
+            MSAnalytics.trackEvent("Submit text", withProperties: ["text":sentimentTextView.text])
 			setActivity(true)
 			
 			SentimentClient.shared.determineSentiment(sentimentTextView.text) { sentimentResponse in
@@ -51,7 +54,7 @@ class ViewController: UIViewController, UITextViewDelegate {
 					self.setSentiment(Sentiment.getSentiment(document.score))
 				
 				} else {
-					
+                    MSAnalytics.trackEvent("Error: failed getting sentiment", withProperties: ["error":sentimentResponse?.errorMessage ?? ""])
 					self.showErrorAlert("Error \(sentimentResponse?.errorStatusCode ?? -1)", message: sentimentResponse?.errorMessage ?? "", dismiss: "Okay")
 				}
 			}
@@ -78,6 +81,11 @@ class ViewController: UIViewController, UITextViewDelegate {
 
 	
 	func setSentiment(_ sentiment:Sentiment?) {
+        if let sentimentEmoji = sentiment?.emoji {
+            MSAnalytics.trackEvent("Sentiment", withProperties: ["emoji":sentimentEmoji])
+        }else{
+            MSAnalytics.trackEvent("Weird issue getting sentiment...")
+        }
 		emojiLabel.text = sentiment?.emoji
 		view.backgroundColor = sentiment?.color ?? #colorLiteral(red: 1, green: 0.4352941176, blue: 0.4117647059, alpha: 1)
 		submitButton.setTitle(sentiment == nil ? submit : reset, for: .normal)
@@ -85,6 +93,11 @@ class ViewController: UIViewController, UITextViewDelegate {
 	
 	
 	func resetTextView() {
+        if let sentimentContent = sentimentTextView.text {
+            MSAnalytics.trackEvent("This is wrong: Reset with text", withProperties: ["text":sentimentContent])
+        }else{
+            MSAnalytics.trackEvent("reset")
+        }
 		sentimentTextView.text = nil
 		sentimentTextPlaceholder.isHidden = false
 		sentimentTextView.isEditable = true

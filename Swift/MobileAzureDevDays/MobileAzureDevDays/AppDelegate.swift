@@ -31,7 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let document = keyResponse {
                 SentimentClient.shared.apiKey = document.key
                 SentimentClient.shared.region = document.region
+                MSAnalytics.trackEvent("Key from API", withProperties: ["region":document.region])
             } else {
+                MSAnalytics.trackEvent("Failed to get key from API")
                 self.showApiKeyAlert(application)
             }
         }
