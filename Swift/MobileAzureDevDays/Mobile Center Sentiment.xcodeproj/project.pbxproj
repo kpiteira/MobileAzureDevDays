@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B576FCFE1F75987E007E2415 /* MobileAzureDevDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileAzureDevDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B576FCFE1F75987E007E2415 /* Mobile Center Sentiment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile Center Sentiment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B576FD011F75987E007E2415 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B576FD031F75987E007E2415 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B576FD061F75987E007E2415 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		B576FCFF1F75987E007E2415 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B576FCFE1F75987E007E2415 /* MobileAzureDevDays.app */,
+				B576FCFE1F75987E007E2415 /* Mobile Center Sentiment.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,9 +99,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B576FCFD1F75987E007E2415 /* MobileAzureDevDays */ = {
+		B576FCFD1F75987E007E2415 /* Mobile Center Sentiment */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B576FD101F75987E007E2415 /* Build configuration list for PBXNativeTarget "MobileAzureDevDays" */;
+			buildConfigurationList = B576FD101F75987E007E2415 /* Build configuration list for PBXNativeTarget "Mobile Center Sentiment" */;
 			buildPhases = (
 				03692EE2D4633F6A18D6AC93 /* [CP] Check Pods Manifest.lock */,
 				B576FCFA1F75987E007E2415 /* Sources */,
@@ -114,9 +114,9 @@
 			);
 			dependencies = (
 			);
-			name = MobileAzureDevDays;
+			name = "Mobile Center Sentiment";
 			productName = roadshow;
-			productReference = B576FCFE1F75987E007E2415 /* MobileAzureDevDays.app */;
+			productReference = B576FCFE1F75987E007E2415 /* Mobile Center Sentiment.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -135,7 +135,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B576FCF91F75987E007E2415 /* Build configuration list for PBXProject "MobileAzureDevDays" */;
+			buildConfigurationList = B576FCF91F75987E007E2415 /* Build configuration list for PBXProject "Mobile Center Sentiment" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -148,7 +148,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B576FCFD1F75987E007E2415 /* MobileAzureDevDays */,
+				B576FCFD1F75987E007E2415 /* Mobile Center Sentiment */,
 			);
 		};
 /* End PBXProject section */
@@ -401,7 +401,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B576FCF91F75987E007E2415 /* Build configuration list for PBXProject "MobileAzureDevDays" */ = {
+		B576FCF91F75987E007E2415 /* Build configuration list for PBXProject "Mobile Center Sentiment" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B576FD0E1F75987E007E2415 /* Debug */,
@@ -410,7 +410,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B576FD101F75987E007E2415 /* Build configuration list for PBXNativeTarget "MobileAzureDevDays" */ = {
+		B576FD101F75987E007E2415 /* Build configuration list for PBXNativeTarget "Mobile Center Sentiment" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B576FD111F75987E007E2415 /* Debug */,

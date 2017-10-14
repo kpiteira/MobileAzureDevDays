@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B576FCFD1F75987E007E2415"
-               BuildableName = "MobileAzureDevDays.app"
-               BlueprintName = "MobileAzureDevDays"
-               ReferencedContainer = "container:MobileAzureDevDays.xcodeproj">
+               BuildableName = "Mobile Center Sentiment.app"
+               BlueprintName = "Mobile Center Sentiment"
+               ReferencedContainer = "container:Mobile Center Sentiment.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B576FCFD1F75987E007E2415"
-            BuildableName = "MobileAzureDevDays.app"
-            BlueprintName = "MobileAzureDevDays"
-            ReferencedContainer = "container:MobileAzureDevDays.xcodeproj">
+            BuildableName = "Mobile Center Sentiment.app"
+            BlueprintName = "Mobile Center Sentiment"
+            ReferencedContainer = "container:Mobile Center Sentiment.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,9 +58,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B576FCFD1F75987E007E2415"
-            BuildableName = "MobileAzureDevDays.app"
-            BlueprintName = "MobileAzureDevDays"
-            ReferencedContainer = "container:MobileAzureDevDays.xcodeproj">
+            BuildableName = "Mobile Center Sentiment.app"
+            BlueprintName = "Mobile Center Sentiment"
+            ReferencedContainer = "container:Mobile Center Sentiment.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B576FCFD1F75987E007E2415"
-            BuildableName = "MobileAzureDevDays.app"
-            BlueprintName = "MobileAzureDevDays"
-            ReferencedContainer = "container:MobileAzureDevDays.xcodeproj">
+            BuildableName = "Mobile Center Sentiment.app"
+            BlueprintName = "Mobile Center Sentiment"
+            ReferencedContainer = "container:Mobile Center Sentiment.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
