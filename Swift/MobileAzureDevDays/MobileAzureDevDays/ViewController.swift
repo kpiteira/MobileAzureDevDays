@@ -93,11 +93,7 @@ class ViewController: UIViewController, UITextViewDelegate {
 	
 	
 	func resetTextView() {
-        if let sentimentContent = sentimentTextView.text {
-            MSAnalytics.trackEvent("This is wrong: Reset with text", withProperties: ["text":sentimentContent])
-        }else{
-            MSAnalytics.trackEvent("reset")
-        }
+        MSAnalytics.trackEvent("reset")
 		sentimentTextView.text = nil
 		sentimentTextPlaceholder.isHidden = false
 		sentimentTextView.isEditable = true
