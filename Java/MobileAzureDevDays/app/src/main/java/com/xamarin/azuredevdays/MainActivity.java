@@ -24,6 +24,12 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.microsoft.azure.mobile.MobileCenter;
+import com.microsoft.azure.mobile.analytics.Analytics;
+import com.microsoft.azure.mobile.crashes.Crashes;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        MobileCenter.start(getApplication(), "a62f77d9-e124-4545-b450-7a502f9a4423",
+                Analytics.class, Crashes.class);
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -50,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onFailure(Call call, IOException e) {
                             System.out.println("Error getting key!");
+                            Analytics.trackEvent("Failed to get key from API");
                         }
                         @Override
                         public void onResponse(Call call, Response response) throws IOException {
@@ -57,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
                                 Models.KeyResponse keyResponse = gson.fromJson(response.body().string(),Models.KeyResponse.class);
                                 sentimentClient.sentimentAPIRegion = keyResponse.region;
                                 sentimentClient.sentimentAPIKey = keyResponse.key;
+                                Map<String, String> properties = new HashMap<>();
+                                properties.put("region", keyResponse.region);
+                                Analytics.trackEvent("Key from API", properties);
                             }
                         }
                     }
@@ -83,9 +95,13 @@ public class MainActivity extends AppCompatActivity {
 
                 if(sentimentText.getText().toString().equals("")) {
                     Snackbar.make(view, "You must enter something!", Snackbar.LENGTH_SHORT).show();
+                    Analytics.trackEvent("Error: Submit without text");
                     return;
                 }
 
+                Map<String, String> properties = new HashMap<>();
+                properties.put("text", sentimentText.getText().toString());
+                Analytics.trackEvent("Submit text", properties);
                 String res = "";
                 getSentimentButton.setText("Calculating");
                 getSentimentButton.setEnabled(false);
@@ -95,7 +111,9 @@ public class MainActivity extends AppCompatActivity {
                             new Callback() {
                                 @Override
                                 public void onFailure(Call call, IOException e) {
-                                    // Something went wrong
+                                    Map<String, String> properties = new HashMap<>();
+                                    properties.put("error", e.getMessage());
+                                    Analytics.trackEvent("Error: failed getting sentiment", properties);
                                 }
 
                                 @Override
@@ -141,6 +159,10 @@ public class MainActivity extends AppCompatActivity {
         if(score!=-1) {
             int sentimentColor = Color.parseColor(getBackgroundColor(score));
             emojiView.setText(getEmojiString(score));
+
+            Map<String, String> properties = new HashMap<>();
+            properties.put("emoji", getEmojiString(score));
+            Analytics.trackEvent("Sentiment", properties);
             backgroundLayout.setBackgroundColor(sentimentColor);
             toolbar.setBackgroundColor(sentimentColor);
             MainActivity.this.getWindow().setStatusBarColor(darkenColor(sentimentColor));
