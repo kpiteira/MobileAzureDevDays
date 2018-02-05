@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(score!=-1) {
             int sentimentColor = Color.parseColor(getBackgroundColor(score));
-            Analytics.trackEvent("Sentiment.computed", new HashMap<String, String>(){{put("sentiment", getEmojiString(score));}});
+            Analytics.trackEvent("Sentiment.computed", new HashMap<String, String>(){{put("sentiment", getEmojiString(score));put("text", sentimentText.getText().toString());}});
             emojiView.setText(getEmojiString(score));
             backgroundLayout.setBackgroundColor(sentimentColor);
             toolbar.setBackgroundColor(sentimentColor);
