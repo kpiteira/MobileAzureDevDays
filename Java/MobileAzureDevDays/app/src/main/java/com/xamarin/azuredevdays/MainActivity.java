@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                Analytics.trackEvent("Text entered", new HashMap<String, String>(){{put("text", sentimentText.getText().toString());}});
+                Analytics.trackEvent("Text.entered", new HashMap<String, String>(){{put("text", sentimentText.getText().toString());}});
                 String res = "";
                 getSentimentButton.setText("Calculating");
                 getSentimentButton.setEnabled(false);
@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(score!=-1) {
             int sentimentColor = Color.parseColor(getBackgroundColor(score));
-            Analytics.trackEvent("Sentiment computed", new HashMap<String, String>(){{put("sentiment", getEmojiString(score));}});
+            Analytics.trackEvent("Sentiment.computed", new HashMap<String, String>(){{put("sentiment", getEmojiString(score));}});
             emojiView.setText(getEmojiString(score));
             backgroundLayout.setBackgroundColor(sentimentColor);
             toolbar.setBackgroundColor(sentimentColor);
