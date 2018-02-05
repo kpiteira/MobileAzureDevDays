@@ -8,6 +8,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,6 +25,11 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
+import java.util.HashMap;
+
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.applications.events.onesdk.EventLogging;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        AppCenter.setLogLevel(Log.VERBOSE);
+        AppCenter.start(getApplication(), "8ec7e310-7506-4658-ac94-acc5ba7c64d6", Analytics.class, EventLogging.class);
+
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -86,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
+                Analytics.trackEvent("Text entered", new HashMap<String, String>(){{put("text", sentimentText.getText().toString());}});
                 String res = "";
                 getSentimentButton.setText("Calculating");
                 getSentimentButton.setEnabled(false);
@@ -136,10 +147,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void UpdateUI(float score){
+    public void UpdateUI(final float score){
 
         if(score!=-1) {
             int sentimentColor = Color.parseColor(getBackgroundColor(score));
+            Analytics.trackEvent("Sentiment computed", new HashMap<String, String>(){{put("sentiment", getEmojiString(score));}});
             emojiView.setText(getEmojiString(score));
             backgroundLayout.setBackgroundColor(sentimentColor);
             toolbar.setBackgroundColor(sentimentColor);
